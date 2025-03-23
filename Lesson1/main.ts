@@ -103,18 +103,39 @@
 // 2. Створити 3 змінних firstName, middleName, lastName, наповнити їх своїм ПІБ.
 // З'єднати їх в одну змінну person (Не об'єкт, просто за допомоги конкатенації)
 
-let firstName: string = 'Сергій';
-let middleName: string = 'Дмитрович';
-let lastName: string = 'Трефель';
-
-console.log(lastName + ' ' + firstName + ' ' + middleName);
+// let firstName: string = 'Сергій';
+// let middleName: string = 'Дмитрович';
+// let lastName: string = 'Трефель';
+//
+// console.log(lastName + ' ' + firstName + ' ' + middleName);
 
 
 // #4N0y5tufA
-// - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
-//   let a = 100; let b = '100'; let c = true;
+// За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
+//  let a = 100; let b = '100'; let c = true;
+
+// let a: number = 100;
+//
+// let b: string = '100';
+// let c: boolean = true;
+//
+// console.log('Тип змінної а:', typeof a);
+// console.log('Тип змінної b:', typeof b);
+// console.log('Тип змінної c:', typeof c);
+
+
+
 //
 // #ruUtWDUI
-// Додаткове для тих хто цікавився prompt`oм
-// - За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками. та вивести в консоль
+//За допомогою 3х різних prompt() отримати 3 слова
+// які являються вашими Імям, По-Батькові та роками. та вивести в консоль
 
+
+
+// let firstName: string | null = prompt("Введіть Ваше ім'я");
+// console.log(firstName);
+// let middleName: string | null = prompt("Введіть Ваше По-Батькові");
+// console.log( middleName);
+// let age: string | null = prompt("Введіть Ваш вік");
+//
+// console.log( age + ' ' + 'років');

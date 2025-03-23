@@ -164,20 +164,27 @@
 
 //2.2 - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 
-//let bookThriller = {
+// interface IBook {
+//     title: string,
+//     pageCount: number,
+//     genre: string
+// }
+//
+// let bookThriller: IBook = {
 //        title: 'UNDER THE SAME STARS',
 //        pageCount: 480,
 //        genre: 'thriller'
 // }
 //
 //
-//let bookMystery = {
+//
+// let bookMystery: IBook = {
 //     title: 'A SLANT OF LIGHT',
 //     pageCount: 192,
 //     genre: 'historical mystery'
 // }
 //
-//let bookRomance = {
+// let bookRomance: IBook = {
 //     title: 'UNLOVED',
 //     pageCount: 464,
 //     genre: 'romance'

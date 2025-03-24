@@ -194,7 +194,15 @@
 // Поля об'єкту : title ,pageCount, genre, authors.
 // Поле "автори" - являється  масивом. Кожен автор має поля name та age.
 
-//let bookThriller = {
+// interface IBook {
+//         title: string,
+//     pageCount: number,
+//     genre: string,
+//     authors: [{name: string, age: number}]
+// }
+//
+//
+// let bookThriller: IBook = {
 //     title: 'UNDER THE SAME STARS',
 //     pageCount: 480,
 //     genre: 'thriller',
@@ -202,14 +210,14 @@
 // }
 //
 //
-//let bookMystery = {
+// let bookMystery: IBook = {
 //     title: 'A SLANT OF LIGHT',
 //     pageCount: 192,
 //     genre: 'historical mystery',
 //     authors: [{name: 'Laura Whitcomb', age: 66}]
 // }
 //
-//let bookRomance = {
+// let bookRomance: IBook = {
 //     title: 'UNLOVED',
 //     pageCount: 464,
 //     genre: 'romance',
@@ -220,7 +228,13 @@
 //2.4 - Створити масив з 10 об'єктами які описують сутніть "користувач".
 // Поля: name, username,password. Вивести в консоль пароль кожного користувача
 
-//let users = [
+// interface IUser {
+//     name: string,
+//     userName: string,
+//     password: string
+// }
+//
+// let users: IUser[] = [
 //     {
 //         name: 'Serhii',
 //         userName: 'serg',
@@ -289,58 +303,72 @@
 // Як зробити цей масив - вам потрібно подумати. Нормальних варіантів опису - 2.
 // Варіант, коли в вас буде одновимірний масив з 21 значенням вичключаємо одразу
 
-//let weather = [
-// {
-// day: ‘monday’,
-// temperatureInTheMorning: 5,
-// temperaturePerDay: 15,
-// temperatureInTheEvening: 7
-// },
-// {
-// day: ‘tuesday’,
-// temperatureInTheMorning: 5,
-// temperaturePerDay: 15,
-// temperatureInTheEvening: 7
-// },
-// {
-// day: ‘wednesday’,
-// temperatureInTheMorning: 5,
-// temperaturePerDay: 15,
-// temperatureInTheEvening: 7
-// },
-// {
-// day: ‘thursday’,
-// temperatureInTheMorning: 5,
-// temperaturePerDay: 15,
-// temperatureInTheEvening: 7
-// },
-// {
-// day: ‘friday’,
-// temperatureInTheMorning: 5,
-// temperaturePerDay: 15,
-// temperatureInTheEvening: 7
-// },
-// {
-// day: ‘saturday’,
-// temperatureInTheMorning: 5,
-// temperaturePerDay: 15,
-// temperatureInTheEvening: 7
-// },
-// {
-// day: ‘sunday’,
-// temperatureInTheMorning: 5,
-// temperaturePerDay: 15,
-// temperatureInTheEvening: 7
+
+// interface IWeather {
+//     day: string,
+//     temperatureInTheMorning: number,
+//     temperaturePerDay: number,
+//     temperatureInTheEvening: number
 // }
+//
+//
+//
+// let weather: IWeather[] = [
+// {
+// day: 'monday',
+// temperatureInTheMorning: 5,
+// temperaturePerDay: 15,
+// temperatureInTheEvening: 7
+// },
+// {
+// day: 'tuesday',
+// temperatureInTheMorning: 5,
+// temperaturePerDay: 15,
+// temperatureInTheEvening: 7
+// },
+// {
+// day: 'wednesday',
+// temperatureInTheMorning: 5,
+// temperaturePerDay: 15,
+// temperatureInTheEvening: 7
+// },
+// {
+// day: 'thursday',
+// temperatureInTheMorning: 5,
+// temperaturePerDay: 15,
+// temperatureInTheEvening: 7
+// },
+// {
+// day: 'friday',
+// temperatureInTheMorning: 5,
+// temperaturePerDay: 15,
+// temperatureInTheEvening: 7
+// },
+// {
+// day: 'saturday',
+// temperatureInTheMorning: 5,
+// temperaturePerDay: 15,
+// temperatureInTheEvening: 7
+// },
+// {
+// day: 'sunday',
+// temperatureInTheMorning: 5,
+// temperaturePerDay: 15,
+// temperatureInTheEvening: 7
+// },
 // ]
+
+
 
 //Логічні розгалуження:
 
 //2.6 - Є змінна х, якій ви надаєте довільне числове значення.
-// Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'. Перевірте  скрипт при a, що дорівнює 1, 0, -3
+// Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'.
+// Перевірте  скрипт при a, що дорівнює 1, 0, -3
 
 
-//let x = +prompt('Введіть число:');
+// let input: string | null = prompt('Введіть число:');
+// let x: number = input !== null ? +input : 0;
 //
 // if (x !== 0) {
 //     console.log('Вірно');
@@ -348,10 +376,12 @@
 //     console.log('Невірно');
 // }
 
-//2.7 - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який перевірить, до якої четверті години попадає число
+//2.7 - Дано змінну time яка рівна числу від 0 до 59.
+// Потрібно написати код, який перевірить, до якої четверті години попадає число
 // (в першу, другу, третю или четверту частину години).
 
-//let time = +prompt('Введіть число від 0 до 59:');
+// let input: string | null = prompt('Введіть число від 0 до 59:');
+// let time: number = input !== null ? +input : 0;
 //
 // if (time >= 0 && time <= 15) {
 //     console.log('Ваше число попадає до першої четверті');
@@ -363,9 +393,11 @@
 //     console.log('Ваше число попадає до четвертої четверті');
 // }
 
-// 2.8 - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
+// 2.8 - У змінній day дано якесь число від 1 до 31.
+// Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).
 
-//let day = +prompt('Введіть число від 1 до 31:');
+// let input: string | null= prompt('Введіть число від 1 до 31:');
+// let day: number = input !== null ? +input : 0;
 //
 // if(day >=1 && day <= 10) {
 //     console.log('Ваше число потрапляє в першу декаду місяця');
@@ -379,8 +411,8 @@
 // Користувач вводить порядковий номер дня тижня і на екрані відображається інфа
 // що заплановано на цей день (можна замість плану на день, назву дня англійською).
 
-
-//let day = +prompt('Введіть порядковий номер дня тижня:');
+// let input: string | null = prompt('Введіть порядковий номер дня тижня:');
+// let day: number = input !== null ? +input : 0;
 //
 // switch (day) {
 //     case 1:
@@ -413,9 +445,11 @@
 // Потрібно знайти та вивести максимальне число з тих двох .
 // Також потрібно врахувати коли введені рівні числа.
 
-
-//let a = +prompt('Введіть перше число a:');
-// let b = +prompt('Введіть друге число b:');
+// let inputFirstNumber: string | null = prompt('Введіть перше число a:');
+// let a = inputFirstNumber !== null ? +inputFirstNumber : 0;
+//
+// let inputSecondNumber: string | null = prompt('Введіть друге число b:');
+// let b: number = inputSecondNumber !== null ? +inputSecondNumber : 0;
 //
 // if(a > b) {
 //     console.log('Число а більше за b і дорівнює:', a);
@@ -427,10 +461,11 @@
 
 //2.11 - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно).
 // Напишіть код який, буде присвоювати змінній х значення "default",
-// якщо ви намагаєтесь присвоїти в неї false-значення (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
+// якщо ви намагаєтесь присвоїти в неї false-значення (хибноподібні, тобто ті, які приводиться до false,
+// а це 0 null undefined і тд).
 
 
-//let x;
+// let x;
 //
 // x = undefined;
 //
@@ -441,8 +476,13 @@
 // За допомоги іф перевірити кожен його елемент на тривалість навчання.
 // У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
 
-
-//let coursesAndDurationArray = [
+// interface ICoursesArray {
+//     title: string,
+//     monthDuration: number,
+// }
+//
+//
+// let coursesAndDurationArray: ICoursesArray[] = [
 //     {title: 'JavaScript Complex', monthDuration: 5},
 //     {title: 'Java Complex', monthDuration: 6},
 //     {title: 'Python Complex', monthDuration: 6},
@@ -482,3 +522,428 @@
 //          console.log("Супер");
 //      }
 // }
+
+
+// 3.1 - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
+
+
+// for (let i: number = 0; i < 10; i += 1) {
+//      document.write(`<div><h3>Lorem ipsum dolor.</h3></div>`)
+//  }
+
+//3.2 - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
+
+// for (let i: number = 0; i < 10; i += 1) {
+//     document.write(`<div>
+// <h3>Lorem ipsum dolor. Index - ${i}</h3>
+// </div>`)
+// }
+
+//3.3 - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
+
+
+// let i: number = 0;
+//
+//  while ( i < 20) {
+//     document.write(`<h1>Lorem ipsum dolor.</h1>`);
+//     i += 1;
+// }
+
+//3.3 - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
+
+// let i: number = 0;
+//
+// while (i < 20) {
+//     document.write(`<h1>Lorem ipsum dolor. Index - ${i}</h1>`);
+//     i += 1;
+// }
+
+
+
+//3.4 - Використовуючи данні з масиву, за допомоги document.write та циклу
+// побудувати структуру по шаблону
+// Масив:
+//
+// let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+//
+// ШАБЛОН:
+//  <ul>
+//     <li>ITEM OF ARRAY</li>
+//     <!--
+//         і тд інші об'єкти масиву
+//          ...
+//          ...
+//          ...
+//     -->
+// </ul>
+//
+// замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
+
+
+
+// let listOfItems: string[] = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+//
+//     document.write(`<ul>`)
+// for (let item of listOfItems) {
+//      document.write(
+// `
+//      <li>${item}</li>
+// `
+//      );
+// }
+// document.write(`</ul>`);
+
+//3.5 Використовуючи данні з масиву, за допомоги document.write та циклу
+// побудувати структуру по шаблону
+// Великими літерами прописанні властивості об'єкту які потрібно впровадити в шаблон
+//
+// 			let products = [
+// 				{
+// 					title: 'milk',
+// 					price: 22,
+// 					image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+// 				},
+// 				{
+// 					title: 'juice',
+// 					price: 27,
+// 					image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+// 				},
+// 				{
+// 					title: 'tomato',
+// 					price: 47,
+// 					image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+// 				},
+// 				{
+// 					title: 'tea',
+// 					price: 15,
+// 					image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+// 				},
+// 			];
+//
+// ШАБЛОН
+//  <div class="product-card">
+//         <h3 class="product-title">TITLE. Price - PRICE</h3>
+//         <img src="IMAGE" alt="" class="product-image">
+// </div>
+// Замість TITLE PRICE IMAGE - підставити відповідні поля з об'єкту
+
+// interface IProduct {
+//     title: string,
+//     price: number,
+//     image: string,
+// }
+//
+// let products: IProduct[] = [
+//     {
+//         title: 'milk',
+//         price: 22,
+//         image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+//     },
+//     {
+//         title: 'juice',
+//         price: 27,
+//         image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+//     },
+//     {
+//         title: 'tomato',
+//         price: 47,
+//         image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+//     },
+//     {
+//         title: 'tea',
+//         price: 15,
+//         image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+//     },
+// ];
+
+// for (let product of products) {
+//     for (let fieldName in product) {
+//         document.write(`<div class="product-card">
+//         <h3 class="product-title">${product['title']}. Price - '${product['price']}'</h3>
+//         <img src="${product['image']}" alt="" class="product-image">
+// </div>`)
+//     }
+// }
+
+// for (const product of products) {
+//         document.write(`<div class="product-card">
+//         <h3 class="product-title">${product.title}. Price - ${product.price} UAH</h3>
+//          <img src="${product.image}" alt="${product.title}" class="product-image">
+//       </div>`)
+// }
+
+
+//3.6 є масив
+// let users = [
+//     {name: 'vasya', age: 31, status: false},
+//     {name: 'petya', age: 30, status: true},
+//     {name: 'kolya', age: 29, status: true},
+//     {name: 'olya', age: 28, status: false},
+//     {name: 'max', age: 30, status: true},
+//     {name: 'anya', age: 31, status: false},
+//     {name: 'oleg', age: 28, status: false},
+//     {name: 'andrey', age: 29, status: true},
+//     {name: 'masha', age: 30, status: true},
+//     {name: 'olya', age: 31, status: false},
+//     {name: 'max', age: 31, status: true}
+// ];
+//  за допомоги циклу вивести:
+//  - користувачів зі статусом true
+//  - користувачів зі статусом false
+//  - користувачів які старші за 30 років
+
+
+// interface IUser {
+//     name: string,
+//     age: number,
+//     status: boolean,
+// }
+//
+// let users: IUser[] = [
+//     {name: 'vasya', age: 31, status: false},
+//     {name: 'petya', age: 30, status: true},
+//     {name: 'kolya', age: 29, status: true},
+//     {name: 'olya', age: 28, status: false},
+//     {name: 'max', age: 30, status: true},
+//     {name: 'anya', age: 31, status: false},
+//     {name: 'oleg', age: 28, status: false},
+//     {name: 'andrey', age: 29, status: true},
+//     {name: 'masha', age: 30, status: true},
+//     {name: 'olya', age: 31, status: false},
+//     {name: 'max', age: 31, status: true}
+// ];
+//
+//
+//
+// for (const user of users) {
+//     if (user.status) {
+//         console.log(user);
+//     }
+// }
+//
+// for (const user of users) {
+//     if (!user.status) {
+//         console.log(user);
+//     }
+// }
+//
+// for (const user of users) {
+//     if (user.age > 30) {
+//         console.log(user);
+//     }
+// }
+
+// ----------------------------------------------------------------------------------//
+//#I2XsG6f
+//4.1 - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
+
+// function squareOfRectangle(a: number, b: number): number {
+//
+//    return  a * b;
+// }
+//
+// squareOfRectangle(7, 8);
+
+
+// #ETGAxbEn8l
+//4.2 - створити функцію яка обчислює та повертає площу кола з радіусом r
+
+
+// function squareCircle(r: number): number {
+//     return Math.PI * Math.pow(r, 2);
+//
+//  }
+//
+//  squareCircle(2);
+
+//#Mbiz5K4yFe7
+//4.3 - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
+
+// function squareCylinder(r: number, h: number): number {
+//
+//     return 2 * Math.PI * r * (h + r);
+// }
+//
+// squareCylinder(3, 5);
+
+
+// #SIdMd0hQ
+//4.4 - створити функцію яка приймає масив та виводить кожен його елемент
+
+ // function outputsArray(arr: any): void {
+ //
+ //     for (const arrElement of arr) {
+ //
+ //           console.log(arrElement);
+ //       }
+ //   }
+ //
+ //
+ //   outputsArray([1, 5, 7, 8, 9]);
+
+//#59g0IsA
+//4.5 - створити функцію яка створює параграф з текстом та виводить його через document.write.
+// Текст задати через аргумент
+
+// function outputText(text: string): void {
+//     return document.write(`<p>${text}`)
+// }
+//
+// outputText('Lorem ipsum dolor sit amet.');
+
+//#hOL6126
+// 4.6- створити функцію яка створює ul з трьома елементами li та виводить його через document.write.
+// Текст li задати через аргумент всім однаковий
+
+
+// function outputList(text: string): void {
+// return document.write(`<ul>
+// <li>${text}</li>
+// <li>${text}</li>
+// <li>${text}</li>
+// </ul>`)
+// }
+//
+// outputList('lorem home!');
+
+
+//#0Kxco1edSN
+//4.7 - створити функцію яка створює ul з  елементами li.
+// Текст li задати через аргумент всім однаковий.
+// Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл) та виводить його через document.write
+//Зроблено за допомогою відеорозв'язку
+
+// function outputList(text: string, quantity: number): void {
+//     document.write(`<ul>`);
+//     for (let i: number = 1; i <= quantity; i += 1) {
+//        document.write(`<li>${text}</li>`);
+//     }
+//     document.write(`</ul>`);
+//
+// }
+//
+// outputList('Hello!', 15);
+
+
+//#gEFoxMMO
+// 4.8- створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві),
+// та будує для них список (ul li) та виводить його через document.write
+
+// function arrayItem(arr: any): void {
+//     document.write(`<ul>`);
+//     for (let i: number = 0; i < arr.length; i += 1) {
+//         document.write(`<li>${arr[i]}</li>`);
+//     }
+//
+//     document.write(`</ul>`);
+// }
+//
+// arrayItem([1, 'hello!', true, 234, 'milk', false, 546, 'tomato']);
+
+//#bovDJDTIjt
+//4.9 - створити функцію яка приймає масив об'єктів з наступними полями id,name,age
+// та виводить їх в документ. Для кожного об'єкту окремий блок.
+
+// function objectItem(object: any): void {
+//     document.write(`<ul>`);
+//     for (const item of object) {
+//         document.write(`<li>${item.id} ${item.name} ${item.age}</li>`)
+//     }
+//     document.write(`</ul>`);
+// }
+//
+// interface IUser {
+//     id: number,
+//     name: string,
+//     age: number,
+// }
+//
+// let users: IUser[] = [
+//     {
+//         id: 1,
+//         name: 'Serhii',
+//         age: 45
+//     },
+//     {
+//         id: 2,
+//         name: 'Jon',
+//         age: 25
+//     },
+//     {
+//         id: 3,
+//         name: 'Volodimir',
+//         age: 35
+//     },
+//
+// ];
+//
+// objectItem(users);
+
+//#pghbnSB
+//4.10 - створити функцію яка повертає найменьше число з масиву
+
+// function arrayMinNumber(arr: number[]): number {
+//     let min: number = arr[0];
+//     for (let i: number = 0; i < arr.length; i += 1){
+//         let number: number = arr[i];
+//         if(number < min) {
+//             min = number;
+//         }
+//
+//     }
+//     return min;
+// }
+//
+// document.write(`Найменьше число в масиві дорівнює:`, arrayMinNumber([33, 45, -25, 123, 67, 89]).toString());
+
+
+
+//#EKRNVPM
+//4.11 - створити функцію sum(arr) яка приймає масив чисел,
+// сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+
+// function sum(arr: number[]): number {
+//     let result: number = 0;
+//     for (let i: number = 0; i < arr.length; i += 1) {
+//         result += arr[i];
+//     }
+//     return result;
+// }
+//
+//
+// console.log(sum([3, 3, 4, 5, 20, 5]));
+//
+// document.write('Сума чисел масиву дорівнює: ', sum([3, 3, 4, 5, 20, 5]).toString());
+
+//#kpsbSQCt2Lf
+//4.12 - створити функцію swap(arr,index1,index2). Функція міняє місцями значення у відповідних індексах
+// Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+//Зроблено за допомогою відеорозв'язку
+
+// function swap(arr: any, index1: number, index2: number): any {
+//      let temp: any = arr[index1];
+//      arr[index1] = arr[index2];
+//      arr[index2] = temp;
+//      return arr;
+//  }
+//
+//  console.log(swap([11,22,33,44],0,1) );
+
+//#mkGDenYnNjn
+//4.13 - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+// Приклад exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD') // => 400
+
+// function exchange(sumUAH: number,currencyValues: string, exchangeCurrency: number): void {
+//     let chosenCurrency;
+//     for (const item of currencyValues) {
+// if(item.currency === exchangeCurrency) {
+//     chosenCurrency = item;
+// }
+//     }
+//
+//     let result = sumUAH / chosenCurrency.value;
+//
+//     return result;
+// }
+//
+// console.log(exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD'));

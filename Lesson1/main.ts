@@ -734,6 +734,8 @@
 // }
 
 // ----------------------------------------------------------------------------------//
+
+
 //#I2XsG6f
 //4.1 - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
 
@@ -933,17 +935,564 @@
 //4.13 - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD') // => 400
 
-// function exchange(sumUAH: number,currencyValues: string, exchangeCurrency: number): void {
-//     let chosenCurrency;
+// type Currency = {
+//     currency: string;
+//     value: number;
+// };
+//
+// function exchange(sumUAH: number, currencyValues: Currency[], exchangeCurrency: string): number | null {
+//     let chosenCurrency: Currency | undefined;
+//
 //     for (const item of currencyValues) {
-// if(item.currency === exchangeCurrency) {
-//     chosenCurrency = item;
-// }
+//         if (item.currency === exchangeCurrency) {
+//             chosenCurrency = item;
+//             break; // Зупиняємо цикл, якщо знайшли валюту
+//         }
 //     }
 //
-//     let result = sumUAH / chosenCurrency.value;
+//     if (!chosenCurrency) {
+//         console.error('Валюта не знайдена');
+//         return null; // Обробляємо випадок, коли валюта не знайдена
+//     }
 //
-//     return result;
+//     return sumUAH / chosenCurrency.value;
 // }
 //
-// console.log(exchange(10000,[{currency:'USD',value:25},{currency:'EUR',value:42}],'USD'));
+// console.log(exchange(10000, [{ currency: 'USD', value: 25 }, { currency: 'EUR', value: 42 }], 'USD'));
+
+// --------------------------------------------------------------------------------------------------------//
+
+//Тут ті самі завдання, що і в занятті про базові функції, але зробити їх потрібно за допомоги стрілочних функцій
+//
+// #I2XsG6f
+// 5.1 - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
+
+// let squareOfRectangle = (a: number, b: number): number => a * b;
+//
+// console.log(squareOfRectangle(2, 10));
+
+
+// #ETGAxbEn8l
+// 5.2 - створити функцію яка обчислює та повертає площу кола з радіусом r
+
+// let squareCircle = (r: number): number => Math.PI * Math.pow(r, 2);
+//
+// console.log(squareCircle(2));
+
+
+// #Mbiz5K4yFe7
+// 5.3 - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
+
+// let squareCylinder = (r: number, h: number): number => 2 * Math.PI * r * (h + r);
+//
+// console.log(squareCylinder(5, 10));
+
+
+// #SIdMd0hQ
+// 5.4 - створити функцію яка приймає масив та виводить кожен його елемент
+
+// let outputsArray = (arr: any[]): void => {
+//     for (const arrElement of arr) {
+//         console.log(arrElement);
+//     }
+// }
+//
+// outputsArray([1, 5, 7, 8, 9, 'one']);
+
+// #59g0IsA
+// 5.5 - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+
+// let outputText = (text: string): void => document.write(`<p>${text}`);
+//
+// outputText('Okten!');
+
+
+// #hOL6126
+// 5.6 - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+
+// let outputList = (text: string): void =>
+//                 document.write(
+//                     `<ul>
+//                  <li>${text}</li>
+//                  <li>${text}</li>
+//                  <li>${text}</li>
+//               </ul>`)
+//
+//
+// outputList('Okten!');
+
+
+
+
+// #0Kxco1edSN
+// 5.7 - створити функцію яка створює ul з трьома елементами li.
+// Текст li задати через аргумент всім однаковий.
+// Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+
+
+// let outputList = (text: string, quantity: number): void =>
+// {
+//     document.write(`<ul>`);
+//     for (let i = 1; i <= quantity; i += 1) {
+//         document.write(`<li>${text}</li>`);
+//     }
+//     document.write(`</ul>`);
+// }
+//
+//
+//
+// outputList('Okten!', 20);
+
+
+
+
+// #gEFoxMMO
+// 5.8 - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+
+// let arrayItem = (arr: any[]): void =>
+// {
+//     document.write(`<ul>`);
+//
+//        for (let i = 0; i < arr.length; i += 1) {
+//            document.write(`<li>${arr[i]}</li>`);
+//        }
+//
+//        document.write(`</ul>`);
+// }
+//
+// arrayItem([1, 'hello!', true, 234, 'milk', false, 546, 'tomato']);
+
+
+
+// #bovDJDTIjt
+// 5.9 - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+
+
+// interface IUser {
+//     id: number,
+//     name: string,
+//     age: number
+// }
+//
+//
+// let objectItem = (object: IUser[]) =>
+// {
+//          document.write(`<ul>`);
+//        for (const item of object) {
+//            document.write(`<li>${item.id} ${item.name} ${item.age}</li>`)
+//        }
+//        document.write(`</ul>`);
+// }
+//
+//    let users = [
+//        {
+//            id: 1,
+//            name: 'Serhii',
+//            age: 45
+//        },
+//        {
+//            id: 2,
+//            name: 'Jon',
+//            age: 25
+//        },
+//        {
+//            id: 3,
+//            name: 'Volodimir',
+//            age: 35
+//        },
+//
+//    ];
+//
+//    objectItem(users);
+
+
+
+
+// #pghbnSB
+// 5.10 - створити функцію яка повертає найменьше число з масиву
+
+// let findMinNumber = (arr: number[]): number => {
+//     let min: number = arr[0];
+//     for (let i: number = 0; i < arr.length; i += 1) {
+//         let number: number = arr[i];
+//         if (number < min) {
+//             min = number;
+//         }
+//     }
+//     return min;
+// };
+//
+// document.write(`Найменше число в масиві: ${findMinNumber([33, 45, -25, 123, 67, 89])}`);
+
+
+
+// #EKRNVPM
+// 5.11 - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його.
+// Приклад sum([1,2,10]) //->13
+
+// let sum = (arr: number[]): number =>
+// {
+//          let result: number = 0;
+//        for (let i: number = 0; i < arr.length; i += 1) {
+//            result += arr[i];
+//        }
+//        return result;
+// }
+//
+// console.log(sum([3, 3, 4, 5, 20, 5]));
+
+
+
+// #kpsbSQCt2Lf
+// 5.12 - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
+// Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+
+// let swap = (arr: any[], index1: any, index2: any): any[] =>
+// {
+//           let temp = arr[index1];
+//         arr[index1] = arr[index2];
+//         arr[index2] = temp;
+//         return arr;
+// }
+//
+// console.log(swap([11,22,33,44],0,1) );
+
+
+
+// #mkGDenYnNjn
+// 5.13 - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+// Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+
+type Currency = {
+    currency: string;
+    value: number;
+};
+
+// const exchange = (sumUAH: number, currencyValues: Currency[], exchangeCurrency: string): number | null => {
+//     let chosenCurrency: Currency | undefined;
+//
+//     for (const item of currencyValues) {
+//         if (item.currency === exchangeCurrency) {
+//             chosenCurrency = item;
+//             break; // Зупиняємо цикл, якщо знайшли валюту
+//         }
+//     }
+//
+//     if (!chosenCurrency) {
+//         console.error('Валюта не знайдена');
+//         return null; // Повертаємо null, якщо валюта не знайдена
+//     }
+//
+//     return sumUAH / chosenCurrency.value;
+// };
+//
+// console.log(exchange(10000, [{ currency: 'USD', value: 25 }, { currency: 'EUR', value: 42 }], 'USD'));
+
+
+// ----------------------------------------------------------------------------------------------------------//
+
+//#dFeorS3m7u
+// 6.1 - Знайти та вивести довижину настипних стрінгових значень
+//     'hello world', 'lorem ipsum', 'javascript is cool'
+
+//const strHello = 'hello world';
+// console.log('Довжина змінної strHello:', strHello.length);
+//
+// const strLorem = 'lorem ipsum';
+// console.log('Довжина змінної strLorem:', strLorem.length);
+//
+// const strJs = 'javascript is cool';
+// console.log('Довжина змінної strJs:', strJs.length);
+
+
+
+// 6.2- Перевести до великого регістру наступні стрінгові значення
+//       'hello world', 'lorem ipsum', 'javascript is cool'
+
+//const strHello = 'hello world';
+// console.log(strHello.toUpperCase());
+//
+// const strLorem = 'lorem ipsum';
+// console.log(strLorem.toUpperCase());
+//
+// const strJs = 'javascript is cool';
+// console.log(strJs.toUpperCase());
+
+
+//#ClDsAm7xba7
+// 6.3 - Перевести до нижнього регістру настипні стрінгові значення
+//       'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
+
+//const strHello = 'HELLO WORLD';
+// console.log(strHello.toLowerCase());
+//
+// const strLorem = 'LOREM IPSUM';
+// console.log(strLorem.toLowerCase());
+//
+// const strJs = 'JAVASCRIPT IS COOL';
+// console.log(strJs.toLowerCase());
+
+
+
+// #0b89BkYZwu
+// 6.4 - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
+
+//let str = ' dirty string   ';
+// console.log(str.trim());
+
+
+//#bfoJuse4ZzP
+// 6.5 - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
+//     let str = 'Ревуть воли як ясла повні';
+//     let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
+
+//  let str = 'Ревуть воли як ясла повні';
+//
+//   let stringToarray = (str) =>
+//   {
+//       if (str) {
+//           return str.split(' ');
+//       }
+//       return ['']
+//   }
+//
+//   console.log(stringToarray(str));
+
+
+//#Rbr5kEQ
+// 6.6 - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
+
+//const arr = [10,8,-7,55,987,-1011,0,1050,0];
+// const arrToString = arr.map(value => value.toString());
+//
+// console.log(arrToString);
+
+
+//#5hqyKTfmc
+// 6.7 - створити функцію sortNums(array,direction), яка прймає масив чисел,
+// та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
+// let nums = [11,21,3];
+// sortNums(nums,'ascending') // [3,11,21]
+// sortNums(nums,'descending') // [21,11,3]
+
+//  let nums = [11,21,3];
+//
+//    let sortNums = (nums, direction) => {
+//        if(direction === 'descending') return nums.sort((num1, num2) => num2 - num1);
+//
+//         if(direction === 'ascending') return nums.sort((num1, num2) => num1 - num2);
+//         else {
+//            return ('Enter the correct question!');
+//        }
+//    }
+//
+//    console.log(sortNums(nums, 'descending'));
+
+
+//#yo06d74c1C
+// 6.8 - є масив
+// let coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+//  -- відсортувати його за спаданням за monthDuration
+//  -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
+//  -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+//  =========================
+
+
+//const coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+
+//const mapCourses = coursesAndDurationArray
+//         .sort((a, b) => b.monthDuration - a.monthDuration)
+//         .filter((course) => course.monthDuration > 5)
+//         .map((course, index) => {
+//         let newCourse = {
+//         id: index + 1,
+//         title: course.title,
+//         mapCourses: course.monthDuration,
+//
+//         }
+//         return newCourse;
+//         });
+// console.log(mapCourses);
+
+//const mapCourses = coursesAndDurationArray
+//     .sort((a, b) => b.monthDuration - a.monthDuration)
+//     .filter((course) => course.monthDuration > 5)
+//     .map((course, index) => ({id: index + 1, ...course}));
+//
+// console.log(mapCourses);
+
+
+// #bolvdlhP
+//  6.9 - описати колоду карт (від 6 до туза без джокерів)
+//  - знайти піковий туз
+//  - всі шістки
+//  - всі червоні карти
+//  - всі буби
+//  - всі трефи від 9 та більше
+//
+// {
+//     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
+//     value: '', // '6'-'10', 'ace','jack','queen','king'
+//     color:'', // 'red','black'
+// }
+
+//  const suits = ['spade', 'diamond','heart', 'clubs'];
+//    const values = ['6', '7', '8', '9', '10','jack','queen','king', 'ace'];
+//
+//    const cards = [];
+//
+//    for (const suit of suits) {
+//        for (const value of values) {
+//           const card = {cardSuit: suit, value: value};
+//           if (suit === 'heart' || suit === 'diamond') {
+//               card.color = 'red';
+//           } else {
+//               card.color = 'black';
+//           }
+//           cards.push(card);
+//        }
+//    }
+//
+//    console.log(cards);
+//
+//
+// console.log(cards.find(card => card.value === 'ace' && card.cardSuit === 'spade') );
+// console.log(cards.filter(card => card.value === '6'));
+// console.log(cards.filter(card => card.color === 'red'));
+// console.log(cards.filter(card => card.cardSuit === 'diamond'));
+// console.log(cards.filter(card => card.cardSuit === 'clubs' && (card.value !== '6' && card.value !== '7' && card.value !== '8')));
+
+
+//#EP5I1UUzAX
+// 6.10 - Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+// {
+//     spades:[],
+//     diamonds:[],
+//     hearts:[],
+//     clubs:[]
+// }
+
+
+
+//let sortCards = cards.reduce((acc, card) => {
+//     if (card.cardSuit === 'spade') {
+//         acc.spades.push(card);
+//     } if (card.cardSuit === 'diamond') {
+//         acc.diamonds.push(card);
+//     } if (card.cardSuit === 'heart') {
+//         acc.hearts.push(card);
+//     } if (card.cardSuit === 'clubs') {
+//         acc.clubs.push(card);
+//     }
+//
+//     return acc;
+//
+// }, {spades:[], diamonds:[], hearts:[], clubs:[]});
+//
+// console.log(sortCards);
+
+//#4LJn7zBx
+// 6.11 - взяти з arrays.js масив coursesArray
+// --написати пошук всіх об'єктів, в яких в modules є sass
+// --написати пошук всіх об'єктів, в яких в modules є docker
+
+
+
+//const coursesArray = [
+//     {
+//         title: 'JavaScript Complex',
+//         monthDuration: 5,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+//     },
+//     {
+//         title: 'Java Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'java core',
+//             'java advanced']
+//     },
+//     {
+//         title: 'Python Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'python core',
+//             'python advanced']
+//     },
+//     {
+//         title: 'QA Complex',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+//     },
+//     {
+//         title: 'FullStack',
+//         monthDuration: 7,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'react',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'node.js',
+//             'python',
+//             'java']
+//     },
+//     {
+//         title: 'Frontend',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+//     }
+// ];
+
+
+
+//const coursesSass = coursesArray.filter(course => {
+//     return course.modules.includes('sass');
+// })
+//
+// console.log(coursesSass);
+//
+// const coursesDocker = coursesArray.filter(course => {
+//     return course.modules.includes('docker');
+// });
+//
+// console.log(coursesDocker);
+

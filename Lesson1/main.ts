@@ -1532,3 +1532,330 @@
 //
 // console.log(coursesDocker);
 
+// ------------------------------------------------------------------------------------- //
+
+
+//#XjJuucOMR0
+// 7.1 - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+// створити пустий масив, наповнити його 10 об'єктами new User(....)
+
+
+// interface IUser {
+//     id: number;
+//     name: string;
+//     surname: string;
+//     email: string;
+//     phone: string;
+// }
+//
+// class User implements IUser {
+//     constructor(
+//         public id: number,
+//         public name: string,
+//         public surname: string,
+//         public email: string,
+//         public phone: string
+//     ) {}
+// }
+//
+// const users: User[] = [
+//     new User(1, 'vasya', 'pupkin', 'asd@asd.com', '380935554345'),
+//     new User(2, 'kolya', 'repkin', 'asd@asd.com', '380935554345'),
+//     new User(3, 'olya', 'trokin', 'asd@asd.com', '380935554345'),
+//     new User(4, 'petya', 'stopkin', 'asd@asd.com', '380935554345'),
+//     new User(5, 'sveta', 'dronff', 'asd@asd.com', '380935554345'),
+//     new User(6, 'dora', 'kurtz', 'asd@asd.com', '380935554345'),
+//     new User(7, 'lisa', 'pupkin', 'asd@asd.com', '380935554345'),
+//     new User(8, 'max', 'pupkin', 'asd@asd.com', '380935554345'),
+//     new User(9, 'alex', 'pupkin', 'asd@asd.com', '380935554345'),
+//     new User(10, 'vasya', 'pupkin', 'asd@asd.com', '380935554345'),
+// ];
+//
+// console.log(users);
+
+
+//#2ikXsE2WiKZ
+// 7.2 - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+
+ // const filterUsers: User[] = users.filter(user => (user.id % 2 === 0));
+ //
+ //  console.log(filterUsers);
+
+
+//#pOeHKct
+// 7.3 - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
+
+// const sortUsers: User[] = filterUsers.sort((user1, user2) => user1.id - user2.id);
+//
+// console.log(sortUsers);
+
+
+//#nkMXISv
+// 7.4 - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+// створити пустий масив, наповнити його 10 об'єктами Client
+
+
+// interface IProduct {
+//     id: number;
+//     name: string;
+//     price: number;
+// }
+//
+// class Product implements IProduct {
+//     constructor(
+//         public id: number,
+//         public name: string,
+//         public price: number
+//     ) {}
+// }
+//
+// interface IClient {
+//     id: number;
+//     name: string;
+//     surname: string;
+//     email: string;
+//     phone: string;
+//     order: Product[];
+// }
+//
+// class Client implements IClient {
+//     constructor(
+//         public id: number,
+//         public name: string,
+//         public surname: string,
+//         public email: string,
+//         public phone: string,
+//         public order: Product[]
+//     ) {}
+// }
+//
+// const clients: Client[] = [
+//     new Client(1, 'vasya', 'pupkin', 'pup@gmail.com', '+380975645654', [new Product(1, 'apple', 34), new Product(4, 'kiwi', 55)]),
+//     new Client(2, 'olga', 'tronss', 'tronss@gmail.com', '+380975646754', [new Product(1, 'apple', 34), new Product(5, 'apricot', 57)]),
+//     new Client(3, 'max', 'ford', 'ford@gmail.com', '+380678956453', [new Product(3, 'fig', 29)]),
+// ];
+//
+// console.log(clients);
+
+
+//#8abtVjRv
+// 7.5 - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
+
+// const sortClients = clients.sort((client1, client2) => client1.order.length - client2.order.length);
+//
+// console.log(sortClients);
+
+
+//#vV9a6584I5
+// 7.6 - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель,
+// виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+//     -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+//     -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+//     -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+//     -- changeYear (newValue) - змінює рік випуску на значення newValue
+//     -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+
+
+
+// class Car {
+//     model: string;
+//     producer: string;
+//     year: number;
+//     maxSpeed: number;
+//     engineVolume: string;
+//     driver?: { name?: string; age?: number; experience?: number };
+//
+//     constructor(model: string, producer: string, year: number, maxSpeed: number, engineVolume: string) {
+//         this.model = model;
+//         this.producer = producer;
+//         this.year = year;
+//         this.maxSpeed = maxSpeed;
+//         this.engineVolume = engineVolume;
+//     }
+//
+//     drive(): void {
+//         console.log(`їдемо зі швидкістю ${this.maxSpeed} км/год`);
+//     }
+//
+//     info(): void {
+//         console.log("Інформація про авто:");
+//         for (const key in this) {
+//             if (this.hasOwnProperty(key)) {
+//                 console.log(`${key}:`, this[key as keyof Car]);
+//             }
+//         }
+//     }
+//
+//     increaseMaxSpeed(newSpeed: number): void {
+//         if(newSpeed > 0) {
+//             this.maxSpeed += newSpeed;
+//         }
+//     }
+//
+//     changeYear(newYear: number): void {
+//         if (newYear > 1885) {
+//             this.year = newYear;
+//         }
+//     }
+//
+//     addDriver(driverObject: { name?: string; age?: number; experience?: number }): void {
+//         this.driver = driverObject;
+//     }
+//
+//
+// }
+//
+// const car = new Car("Camry", "Toyota", 2023, 200, "2.4L");
+//
+// console.log(car);
+// car.drive();
+// car.info();
+// car.increaseMaxSpeed(100);
+// car.changeYear(2015);
+// car.addDriver({ name: "John Doe", age: 35, experience: 10 });
+//
+// console.log(car);
+
+
+
+//#5kla3yMpgp
+// 7.7 - (Те саме, тільки через клас)
+// Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+// -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+//     -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+//     -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+//     -- changeYear (newValue) - змінює рік випуску на значення newValue
+//     -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+
+//   class Car {
+//
+//
+//        constructor(model, producer, year, maxSpeed, engineVolume) {
+//            this.model = model;
+//           this.producer = producer;
+//           this.year = year;
+//           this.maxSpeed = maxSpeed;
+//           this.engineVolume = engineVolume;
+//
+//               }
+//
+//        drive()  {
+//               return `їдемо зі швидкістю ${this.maxSpeed} на годину`;
+//           };
+//           info()  {
+//                for (const key in this) {
+//                   console.log(key, this[key]);
+//               }
+//           };
+//           increaseMaxSpeed(newSpeed) {
+//               if(newSpeed > 0 ) this.maxSpeed = this.maxSpeed + newSpeed;
+//
+//           };
+//           changeYear(newYear) {
+//                 if (newYear > 1885)  this.year = newYear;
+//
+//           };
+//           addDriver(driverObject) {
+//               if (driverObject) return this.driver = driverObject;
+//
+//
+//         }
+//    }
+//
+//      const car = new Car('Camry', 'Toyota', '2023', 200, '2353');
+//
+//
+//    console.log(car);
+//    car.drive();
+//    car.info();
+//    car.increaseMaxSpeed(100);
+//    car.changeYear(2015);
+//    car.addDriver({});
+//    console.log(car);
+
+//#zg6Fifnqig
+// 7.8 -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+// Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+// За допомоги циклу знайти яка попелюшка повинна бути з принцом.
+// Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+
+//class Cinderella {
+//
+//     constructor(name, age, footSize) {
+//         this.name = name;
+//         this.age = age;
+//         this.footSize = footSize;
+//     }
+// }
+//
+// const cinderellas = [
+//     new Cinderella('Olia', 23, 35),
+//     new Cinderella('Ella', 21, 34),
+//     new Cinderella('Jane', 26, 36),
+//     new Cinderella('Dora', 28, 37),
+//     new Cinderella('Anne', 22, 38),
+//     new Cinderella('Jess', 21, 33),
+//     new Cinderella('Abigail', 20, 35),
+//     new Cinderella('Diana', 24, 38),
+//     new Cinderella('Eliza', 23, 37),
+//     new Cinderella('Emma', 23, 35)
+//
+// ];
+//
+// class Prince {
+//
+//     constructor(name, age, shoeHeFound) {
+//         this.name = name;
+//         this.age = age;
+//         this.shoeHeFound = shoeHeFound;
+//     }
+//
+// }
+//
+// const prince = new Prince('Jon', 33, 21);
+
+
+
+//for (const cinderella of cinderellas) {
+//     if (cinderella.footSize === prince.shoeHeFound) prince.wife = cinderella;
+// }
+
+//const princeWife = cinderellas.find(cinderella => cinderella.footSize === prince.shoeHeFound);
+//
+// prince.wife = princeWife;
+
+
+
+//#gsKLAsNWM
+// 7.9 - Через Array.prototype. створити власний foreach, filter
+
+//Array.prototype.myForEach = function (callback) {
+//
+//      for (const item of this) {
+//           callback(item);
+//      }
+//
+// }
+//     [2, 3, 4, 5 ].myForEach(( x )=> console.log(x));
+
+//const users = [
+//      {name: 'vasya', age:33},
+//      {name: 'vasya', age:35},
+//      {name: 'vasya', age:37},
+//      {name: 'vasya', age:33}
+// ]
+//
+// Array.prototype.myFilter = function (callback){
+//      const arr = [];
+//      for (const item of this) {
+// if (callback(item)) {
+// arr.push(item);
+// }
+//      }
+//      return arr;
+// }
+//
+//
+// const result = users.myFilter((user) => user.age);
+//
+// console.log(result);

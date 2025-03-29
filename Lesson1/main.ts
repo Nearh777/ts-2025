@@ -1677,14 +1677,12 @@
 //         console.log(`їдемо зі швидкістю ${this.maxSpeed} км/год`);
 //     }
 //
-//     info(): void {
-//         console.log("Інформація про авто:");
-//         for (const key in this) {
-//             if (this.hasOwnProperty(key)) {
-//                 console.log(`${key}:`, this[key as keyof Car]);
+//         info(): void {
+//             console.log("Інформація про авто:");
+//              for (const [key, value] of Object.entries(this)) {
+//                  console.log(`${key}:`, value);
 //             }
 //         }
-//     }
 //
 //     increaseMaxSpeed(newSpeed: number): void {
 //         if(newSpeed > 0) {
@@ -1727,57 +1725,81 @@
 //     -- changeYear (newValue) - змінює рік випуску на значення newValue
 //     -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
-//   class Car {
+// class Car {
+//     model: string;
+//     producer: string;
+//     year: number;
+//     maxSpeed: number;
+//     engineVolume: string;
+//     driver?: { name?: string; age?: number; experience?: number };
 //
+//     constructor(model: string, producer: string, year: number, maxSpeed: number, engineVolume: string) {
+//         this.model = model;
+//         this.producer = producer;
+//         this.year = year;
+//         this.maxSpeed = maxSpeed;
+//         this.engineVolume = engineVolume;
+//     }
 //
-//        constructor(model, producer, year, maxSpeed, engineVolume) {
-//            this.model = model;
-//           this.producer = producer;
-//           this.year = year;
-//           this.maxSpeed = maxSpeed;
-//           this.engineVolume = engineVolume;
+//     drive(): void {
+//         console.log(`їдемо зі швидкістю ${this.maxSpeed} км/год`);
+//     }
 //
-//               }
-//
-//        drive()  {
-//               return `їдемо зі швидкістю ${this.maxSpeed} на годину`;
-//           };
-//           info()  {
-//                for (const key in this) {
-//                   console.log(key, this[key]);
-//               }
-//           };
-//           increaseMaxSpeed(newSpeed) {
-//               if(newSpeed > 0 ) this.maxSpeed = this.maxSpeed + newSpeed;
-//
-//           };
-//           changeYear(newYear) {
-//                 if (newYear > 1885)  this.year = newYear;
-//
-//           };
-//           addDriver(driverObject) {
-//               if (driverObject) return this.driver = driverObject;
-//
-//
+//         info(): void {
+//             console.log("Інформація про авто:");
+//              for (const [key, value] of Object.entries(this)) {
+//                  console.log(`${key}:`, value);
+//             }
 //         }
-//    }
 //
-//      const car = new Car('Camry', 'Toyota', '2023', 200, '2353');
+//     increaseMaxSpeed(newSpeed: number): void {
+//         if(newSpeed > 0) {
+//             this.maxSpeed += newSpeed;
+//         }
+//     }
+//
+//     changeYear(newYear: number): void {
+//         if (newYear > 1885) {
+//             this.year = newYear;
+//         }
+//     }
+//
+//     addDriver(driverObject: { name?: string; age?: number; experience?: number }): void {
+//         this.driver = driverObject;
+//     }
 //
 //
-//    console.log(car);
-//    car.drive();
-//    car.info();
-//    car.increaseMaxSpeed(100);
-//    car.changeYear(2015);
-//    car.addDriver({});
-//    console.log(car);
+// }
+//
+// const car = new Car("Camry", "Toyota", 2023, 200, "2.4L");
+//
+// console.log(car);
+// car.drive();
+// car.info();
+// car.increaseMaxSpeed(100);
+// car.changeYear(2015);
+// car.addDriver({ name: "John Doe", age: 35, experience: 10 });
+//
+// console.log(car);
 
 //#zg6Fifnqig
 // 7.8 -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 // За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 // Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+
+
+// class Cinderella {
+//     name: string;
+//     age: number;
+//     footSize: number;
+//
+//     constructor(name: string, age: number, footSize: number) {
+//         this.name = name;
+//         this.age = age;
+//         this.footSize = footSize;
+//     }
+// }
 
 //class Cinderella {
 //
@@ -1788,7 +1810,7 @@
 //     }
 // }
 //
-// const cinderellas = [
+// const cinderellas: Cinderella[] = [
 //     new Cinderella('Olia', 23, 35),
 //     new Cinderella('Ella', 21, 34),
 //     new Cinderella('Jane', 26, 36),
@@ -1801,6 +1823,37 @@
 //     new Cinderella('Emma', 23, 35)
 //
 // ];
+//
+// class Prince {
+//     name: string;
+//     age: number;
+//     shoeHeFound: number;
+//     wife?: Cinderella;
+//
+//     constructor(name: string, age: number, shoeHeFound: number) {
+//         this.name = name;
+//         this.age = age;
+//         this.shoeHeFound = shoeHeFound;
+//     }
+//
+//         princeWife(cinderellas: Cinderella[]): void {this.wife = cinderellas.find((cinderella) => cinderella.footSize === this.shoeHeFound);};
+//
+//
+// }
+//
+//
+// const prince = new Prince('Jon', 33, 21);
+//
+// prince.wife = princeWife;
+
+
+
+// // Поиск жены
+// console.log(prince.findWife(cinderellas));;
+//
+// console.log(prince);
+
+
 //
 // class Prince {
 //
@@ -1824,38 +1877,98 @@
 //
 // prince.wife = princeWife;
 
+// ---------------------------------------------------------------------------------------//
+
+//
+// class Cinderella {
+//     name: string;
+//     age: number;
+//     footSize: number;
+//
+//     constructor(name: string, age: number, footSize: number) {
+//         this.name = name;
+//         this.age = age;
+//         this.footSize = footSize;
+//     }
+// }
+//
+// const cinderellas: Cinderella[] = [
+//     new Cinderella("Olia", 23, 35),
+//     new Cinderella("Ella", 21, 34),
+//     new Cinderella("Jane", 26, 36),
+//     new Cinderella("Dora", 28, 37),
+//     new Cinderella("Anne", 22, 38),
+//     new Cinderella("Jess", 21, 33),
+//     new Cinderella("Abigail", 20, 35),
+//     new Cinderella("Diana", 24, 38),
+//     new Cinderella("Eliza", 23, 37),
+//     new Cinderella("Emma", 23, 35),
+// ];
+//
+// class Prince {
+//     name: string;
+//     age: number;
+//     shoeHeFound: number;
+//     wife?: Cinderella;
+//
+//     constructor(name: string, age: number, shoeHeFound: number) {
+//         this.name = name;
+//         this.age = age;
+//         this.shoeHeFound = shoeHeFound;
+//     }
+//
+//     findWife(cinderellas: Cinderella[]): void {
+//         this.wife = cinderellas.find((cinderella) => cinderella.footSize === this.shoeHeFound);
+//     }
+// }
+//
+// const prince = new Prince("Jon", 33, 35);
+//
+// // Поиск жены
+// prince.findWife(cinderellas);
+//
+// console.log(prince);
+
 
 
 //#gsKLAsNWM
 // 7.9 - Через Array.prototype. створити власний foreach, filter
 
-//Array.prototype.myForEach = function (callback) {
-//
-//      for (const item of this) {
-//           callback(item);
-//      }
-//
-// }
-//     [2, 3, 4, 5 ].myForEach(( x )=> console.log(x));
+// Расширение интерфейса массива в TypeScript
+interface Array<T> {
+    myForEach(callback: (item: T, index?: number, array?: T[]) => void): void;
+    myFilter(callback: (item: T, index?: number, array?: T[]) => boolean): T[];
+}
 
-//const users = [
-//      {name: 'vasya', age:33},
-//      {name: 'vasya', age:35},
-//      {name: 'vasya', age:37},
-//      {name: 'vasya', age:33}
-// ]
-//
-// Array.prototype.myFilter = function (callback){
-//      const arr = [];
-//      for (const item of this) {
-// if (callback(item)) {
-// arr.push(item);
-// }
-//      }
-//      return arr;
-// }
-//
-//
-// const result = users.myFilter((user) => user.age);
-//
-// console.log(result);
+// Реализация метода myForEach
+Array.prototype.myForEach = function <T>(callback: (item: T, index?: number, array?: T[]) => void): void {
+    for (let i = 0; i < this.length; i++) {
+        callback(this[i], i, this);
+    }
+};
+
+// Реализация метода myFilter
+Array.prototype.myFilter = function <T>(callback: (item: T, index?: number, array?: T[]) => boolean): T[] {
+    const arr: T[] = [];
+    for (let i = 0; i < this.length; i++) {
+        if (callback(this[i], i, this)) {
+            arr.push(this[i]);
+        }
+    }
+    return arr;
+};
+
+// Тестирование myForEach
+[2, 3, 4, 5].myForEach((x) => console.log(x));
+
+// Тестирование myFilter
+const users = [
+    { name: "vasya", age: 33 },
+    { name: "petya", age: 35 },
+    { name: "kolya", age: 37 },
+    { name: "sasha", age: 33 },
+];
+
+const result = users.myFilter((user) => user.age === 33);
+
+console.log(result);

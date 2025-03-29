@@ -1935,40 +1935,40 @@
 // 7.9 - Через Array.prototype. створити власний foreach, filter
 
 // Расширение интерфейса массива в TypeScript
-interface Array<T> {
-    myForEach(callback: (item: T, index?: number, array?: T[]) => void): void;
-    myFilter(callback: (item: T, index?: number, array?: T[]) => boolean): T[];
-}
-
-// Реализация метода myForEach
-Array.prototype.myForEach = function <T>(callback: (item: T, index?: number, array?: T[]) => void): void {
-    for (let i = 0; i < this.length; i++) {
-        callback(this[i], i, this);
-    }
-};
-
-// Реализация метода myFilter
-Array.prototype.myFilter = function <T>(callback: (item: T, index?: number, array?: T[]) => boolean): T[] {
-    const arr: T[] = [];
-    for (let i = 0; i < this.length; i++) {
-        if (callback(this[i], i, this)) {
-            arr.push(this[i]);
-        }
-    }
-    return arr;
-};
-
-// Тестирование myForEach
-[2, 3, 4, 5].myForEach((x) => console.log(x));
-
-// Тестирование myFilter
-const users = [
-    { name: "vasya", age: 33 },
-    { name: "petya", age: 35 },
-    { name: "kolya", age: 37 },
-    { name: "sasha", age: 33 },
-];
-
-const result = users.myFilter((user) => user.age === 33);
-
-console.log(result);
+// interface Array<T> {
+//     myForEach(callback: (item: T, index?: number, array?: T[]) => void): void;
+//     myFilter(callback: (item: T, index?: number, array?: T[]) => boolean): T[];
+// }
+//
+// // Реализация метода myForEach
+// Array.prototype.myForEach = function <T>(callback: (item: T, index?: number, array?: T[]) => void): void {
+//     for (let i = 0; i < this.length; i++) {
+//         callback(this[i], i, this);
+//     }
+// };
+//
+// // Реализация метода myFilter
+// Array.prototype.myFilter = function <T>(callback: (item: T, index?: number, array?: T[]) => boolean): T[] {
+//     const arr: T[] = [];
+//     for (let i = 0; i < this.length; i++) {
+//         if (callback(this[i], i, this)) {
+//             arr.push(this[i]);
+//         }
+//     }
+//     return arr;
+// };
+//
+// // Тестирование myForEach
+// [2, 3, 4, 5].myForEach((x) => console.log(x));
+//
+// // Тестирование myFilter
+// const users = [
+//     { name: "vasya", age: 33 },
+//     { name: "petya", age: 35 },
+//     { name: "kolya", age: 37 },
+//     { name: "sasha", age: 33 },
+// ];
+//
+// const result = users.myFilter((user) => user.age === 33);
+//
+// console.log(result);

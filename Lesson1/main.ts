@@ -1972,3 +1972,141 @@
 // const result = users.myFilter((user) => user.age === 33);
 //
 // console.log(result);
+
+//-----------------------------------------------------------------------------------//
+
+//#AiN5CoUQ
+// 8.1 - Створити функцію, яка робить глибоку копію об'єкту.
+// Додати перевірки на undefined, null, NaN.
+// Подумати і реалізувати логіку, в якій кінцевий об'єкт буде мати функції,які в нього були до цього моменту.
+
+
+// interface IUser {
+//     id: number,
+//     name: string,
+//     surname: string,
+//     skills: string[],
+//     foo: () => void,
+//     greeting: () => void
+//
+// }
+
+// interface IUser {
+//     id: number;
+//     name: string;
+//     surname: string;
+//     skills: string[];
+//     foo: () => void;
+//     greeting: () => void;
+// }
+//
+// function copyObjFun<T extends Record<string, any>>(obj: T): T {
+//     if (!obj || typeof obj !== "object") {
+//         throw new Error("Помилка!");
+//     }
+//
+//     let functions: { key: string; functionCopy: Function }[] = [];
+//
+//     for (const key in obj) {
+//         if (typeof obj[key] === "function") {
+//             functions.push({ key, functionCopy: obj[key] });
+//         }
+//     }
+//
+//     // Клонируем объект без методов
+//     const copyObj: Partial<T> = Object.assign({}, obj);
+//
+//     // Восстанавливаем методы
+//     for (const func of functions) {
+//         (copyObj as any)[func.key] = func.functionCopy;
+//     }
+//
+//     return copyObj as T;
+// }
+//
+// const user: IUser = {
+//     id: 1,
+//     name: "petya",
+//     surname: "stronov",
+//     skills: ["html", "js", "node.js"],
+//     foo() {
+//         console.log("Foo executed");
+//     },
+//     greeting() {
+//         console.log("Hello!");
+//     },
+// };
+//
+// const copiedUser = copyObjFun(user);
+// console.log(copiedUser);
+// copiedUser.greeting();
+// copiedUser.foo();
+
+// -----------------------------------------------------------------------------------//
+
+
+
+
+// const user: IUser = {
+//     id: 1,
+//     name: 'petya',
+//     surname: 'stronov',
+//     skills: ['html', 'js', 'node.js'],
+//     foo() {},
+//     greeting() {}
+// }
+
+
+
+// function copyObjFun(obj) {
+//     let functions = [];
+//     for (const key in obj) {
+//         if (typeof obj[key] === 'function') {
+//             const functionCopy = obj[key].bind({});
+//             functions.push({functionCopy, key});
+//         }
+//     }
+//
+//     if (obj) {
+//         const copyObj = JSON.parse(JSON.stringify(obj));
+//         for (const func of functions) {
+//             copyObj[func.key] = func.functionCopy;
+//         }
+//
+//         return  copyObj;
+//     }
+//     throw new Error('Помилка!');
+//
+// }
+
+
+// console.log(copyObjFun(user));
+
+
+
+//#iz6emEsP2BA
+// 8.2 - є масив
+
+interface IArray {
+    id?: number,
+    title: string,
+    monthDuration: number
+}
+
+let coursesAndDurationArray: IArray[] = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+
+//за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration
+//     Зробити все ВИКЛЮЧНО за допомоги інлайн конструкції
+
+
+const newCoursesAndDurationArray: IArray[] = coursesAndDurationArray.map((course: IArray, index: number): IArray =>
+    ({...course, id: index + 1}));
+
+console.log(newCoursesAndDurationArray);

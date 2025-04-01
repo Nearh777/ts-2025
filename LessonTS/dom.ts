@@ -380,61 +380,30 @@
 // При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ.
 // Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
 
-
-
-
-// let form = document.forms.namedItem("form");
 //
-// if (form) {
-//     form.onsubmit = function (e: Event) {
-//         e.preventDefault();
+// const sendForm = document.querySelector('.form') as HTMLFormElement;
 //
-//         let nameInput = form?.elements.namedItem("name") as HTMLInputElement;
-//         let surnameInput = form?.elements.namedItem("surname") as HTMLInputElement;
-//         let ageInput = form?.elements.namedItem("age") as HTMLInputElement;
-//
-//         if (nameInput && surnameInput && ageInput) {
-//             let user = {
-//                 name: nameInput.value,
-//                 surname: surnameInput.value,
-//                 age: parseInt(ageInput.value)
-//             };
-//
-//             let p = document.createElement('p');
-//             p.textContent = `User: ${JSON.stringify(user)}`;
-//             document.body.appendChild(p);
-//         }
-//     };
-// }
-// const forms: HTMLCollectionOf<HTMLFormElement> = document.forms;
-// const sendForm: HTMLFormElement = forms[0];
-
-
-
-
-// sendForm.namedItem(name: string)
-
-// const sendForm: HTMLFormElement = document.getElementsByTagName('form')
-
 // sendForm.addEventListener('submit', handleSubmit);
 //
-// function handleSubmit(e: Event): HTMLParagraphElement {
+// function handleSubmit(e: Event): void {
 //     e.preventDefault();
-//     const form: EventTarget = e.target;
-//     const name: string = form.elements.name.value;
-//     const surname: string = form.elements.surname.value;
-//     const age: string = form.elements.age.value;
+//     const form = e.target as HTMLFormElement;
+//     const name: string = (form.elements.namedItem('name') as HTMLInputElement)?.value;
+//     const surname: string = (form.elements.namedItem('surname') as HTMLInputElement)?.value;
+//     const age: string = (form.elements.namedItem('age') as HTMLInputElement)?.value;
 //
-//     if (name === "" || surname === "" || age === "") {
-//                let p = document.createElement('p');
-//        p.textContent = 'Please fill in all the fields!';
-//         return (document.body.appendChild(p));
+//     if (!name || !surname || !age) {
+//         const errorMessage: HTMLParagraphElement = document.createElement('p');
+//         errorMessage.textContent = 'Please fill in all the fields!';
+//         document.body.appendChild(errorMessage);
+//         return;
 //     }
-//     let p: HTMLParagraphElement = document.createElement('p');
-//     p.textContent = `UserName: ${name}, Surname: ${surname}, Age: ${age}`;
-//     document.body.appendChild(p);
-//     form.reset();
 //
+//     const userInfo: HTMLParagraphElement = document.createElement('p');
+//     userInfo.textContent = `UserName: ${name}, Surname: ${surname}, Age: ${age}`;
+//     document.body.appendChild(userInfo);
+//
+//     form.reset();
 // }
 
 // #2VaLt4vDczH
@@ -443,10 +412,21 @@
 
 
 
-// let counter = +localStorage.getItem('number');
+// let counter: number = Number(localStorage.getItem('number')) || 0;
 // counter += 1;
-// localStorage.setItem('number', counter);
-// document.getElementById('counter-title').textContent = counter;
+// localStorage.setItem('number', counter.toString());
+// document.getElementById('counter-title')!.textContent = counter.toString();
+
+// const counterKey = 'number';
+// let counter: number = Number(localStorage.getItem(counterKey)) || 0;
+//
+// counter += 1;
+// localStorage.setItem(counterKey, counter.toString());
+//
+// const counterTitle: HTMLElement | null= document.getElementById('counter-title');
+// if (counterTitle) {
+//     counterTitle.textContent = counter.toString();
+// }
 
 
 
@@ -456,12 +436,18 @@
 // Є  сторінка sessionsListPage.html (назва довільна), при відвідуванні якої потрібно відмалювати всю
 // інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а малювати в DOM
 
-
-// let sessionsList = JSON.parse(localStorage.getItem('sessionsList')) || [];
 //
-//     sessionsList.push(new Date());
+// const sessionsKey = 'sessionsList';
 //
-//     localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
+// // Отримуємо список сесій з localStorage або створюємо порожній масив
+// const sessionsList: Date[] = JSON.parse(localStorage.getItem(sessionsKey) || '[]')
+//     .map((dateStr: string) => new Date(dateStr)); // Перетворюємо рядки у Date
+//
+// // Додаємо нову сесію
+// sessionsList.push(new Date());
+//
+// // Оновлюємо localStorage
+// localStorage.setItem(sessionsKey, JSON.stringify(sessionsList));
 
 
 // #Jg0gPO00

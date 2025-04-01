@@ -1,0 +1,89 @@
+.box {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    background-color: aquamarine;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+.button {
+    width: 75px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: white;
+    background-color: cadetblue;
+}
+
+
+.form {
+
+    padding: 32px;
+
+}
+
+.input {
+    border: 1px solid darkgray;
+    border-radius: 15px;
+    padding: 10px;
+    outline: none;
+}
+
+.btn {
+    width:120px;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    background-color: #7ff3f3;
+
+}
+
+.box__count {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10em;
+    border-radius: 15px;
+    background-color: palegoldenrod;
+}
+
+form {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    width: 200px;
+    height: 35px;
+    border: 1px solid darkgray;
+    border-radius: 15px;
+    font-size: 18px;
+}
+
+.carts {
+    width: 100vw;
+    display: flex;
+    gap: 15px;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    display: flex;
+}
+
+.list-item {
+    width: 200px;
+    height: 400px;
+}
